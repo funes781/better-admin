@@ -1,5 +1,5 @@
 if [ -z "${BASH_VERSION:-}" ]; then
-    echo -e "\033[0;31m[ERROR] install.sh requires bash to start\033[0m"
+    echo "\033[0;31m[ERROR] install.sh requires bash to start\033[0m"
     echo "  Use: bash install.sh"
     exit 1
 fi
