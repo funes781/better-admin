@@ -5,7 +5,9 @@ import sys
 from pathlib import Path
 from datetime import datetime
  
-ENV_PATH = Path(__file__).parent.parent / ".env"
+script_path = Path(__file__).resolve()
+project_root = script_path.parent.parent
+ENV_PATH = project_root / ".env"
 
 def _random_password(length: int = 32) -> str:
     """Alphanumeric + safe symbols, no shell-special chars."""

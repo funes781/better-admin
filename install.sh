@@ -1,3 +1,9 @@
+if [ -z "${BASH_VERSION:-}" ]; then
+    echo -e "${'\033[0;31m'}[ERROR] Install.sh require bash to start"
+    echo "  Use: bash install.sh"
+    exit 1
+fi
+
 set -euo pipefail
 
 # COLORS
@@ -409,7 +415,7 @@ step_start_stack() {
     local base_url="https://${SERVER_NAME}"
  
     echo -e "│  API Base     : ${CYAN}${base_url}/api/v1/${RESET}"
-    echo -e "│  API Docs     : ${CYAN}${base_url}/docs${RESET}"
+    # echo -e "│  API Docs     : ${CYAN}${base_url}/docs${RESET}"
     echo -e "│  Grafana      : ${CYAN}${base_url}/grafana/${RESET}"
     echo -e "│  Health Check : ${CYAN}${base_url}/health${RESET}"
 
